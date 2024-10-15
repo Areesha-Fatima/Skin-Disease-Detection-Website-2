@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "functions": {
+    "api/signup.js": {
+      "maxDuration": 30
+    },
+    "api/login.js": {
+      "maxDuration": 30
+    },
+    "api/getUsers.js": {
+      "maxDuration": 30
+    }
+  },
+  "builds": [
+    { "src": "app.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "api/$1.js" }
+  ]
+}
